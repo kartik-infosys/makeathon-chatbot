@@ -1,0 +1,90 @@
+:root {
+  /* --primary: #caf0f8;
+  --secondary: #90e0ef;
+  --tertiary: #00b4d8;
+
+  --primary-bg: #0077b6;
+  --secondary-bg: #03045e; */
+
+  --text-color-dark: #474747;
+
+  --primary: #caf0f8; /* Chat background */
+  --secondary: #90e0ef; /* Select box color */
+  --tertiary: #00b4d8; /* Text color in side bar */
+
+  --primary-bg: #0077b6;
+  --secondary-bg: #03045e; /* Side bar background */
+}
+
+body {
+  background-color: var(--primary-bg);
+  overflow-x: hidden;
+}
+
+
+#input-box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: white;
+  position: fixed;
+  bottom: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50px;
+}
+
+#input-box input::placeholder {
+  color: var(--text-color-dark);
+}
+
+#input-box button {
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px 10px;
+}
+
+.chat-feed {
+  margin: 90px auto;
+}
+
+.chat-feed h3 {
+  background: -webkit-linear-gradient(var(--secondary), var(--tertiary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 2rem;
+}
+
+.select-plan {
+  margin: 10px;
+  border-radius: 10px;
+}
+
+.select-plan label, .select-plan select {
+  color: var(--secondary);
+}
+
+.question-list {
+  margin-top: 50px;
+}
+
+.question-list span {
+  padding: 10px auto;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+}
+
+.questions-grid {
+  background-color: var(--secondary-bg);
+  color: var(--tertiary);
+}
+
+.chat-question {
+  background-color: var(--primary);
+  padding: 10px;
+  border-radius: 50px 10px 50px 50px;
+}
