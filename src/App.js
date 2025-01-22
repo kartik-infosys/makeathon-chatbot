@@ -14,7 +14,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<ChatFeed />}/> 
-          <Route exact path="/:id" element={<><h1>Dynamic</h1></>}/> 
+          <Route exact path="/:id" element={<></>}/> 
         </Routes>
       </BrowserRouter>
     </>
