@@ -1,5 +1,3 @@
-import LinearProgress from '@mui/material/LinearProgress';
-
 const ChatComponent = (props) => {
     const { question, answer, isLoading } = props.chat;
     return (

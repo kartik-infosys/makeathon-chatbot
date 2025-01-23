@@ -1,22 +1,14 @@
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-import { BrowserRouter, Routes, Route } from "react-router";
-
 import ChatFeed from "./components/ChatFeed.jsx";
-
 
 function App() {
   return (
     <>
       {/* create routes */}
       {/* one for home and one for dynamic routes */}
-      <BrowserRouter>
-        <Routes>
-          <Route exact path="/" element={<ChatFeed />}/> 
-          <Route exact path="/:id" element={<></>}/> 
-        </Routes>
-      </BrowserRouter>
+      <ChatFeed />
     </>
   );
 }
