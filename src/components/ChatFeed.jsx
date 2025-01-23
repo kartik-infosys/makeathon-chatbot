@@ -34,8 +34,6 @@ const ChatFeed = () => {
             and create ticket with only title, description, priority, status, openDate, closeDate (if closed)`);
         const textResult = result.response.text();
 
-        console.log(textResult)
-
         const currentChat = {
             id: uuidv4(),
             question: textInput,
