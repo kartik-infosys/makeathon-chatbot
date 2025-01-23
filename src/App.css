@@ -53,6 +53,7 @@ body {
 .chat-feed h3 {
   background: -webkit-linear-gradient(var(--secondary), var(--tertiary));
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 2rem;
 }
