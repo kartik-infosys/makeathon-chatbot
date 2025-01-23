@@ -70,12 +70,23 @@ body {
   margin-top: 50px;
 }
 
+.MuiListItemButton-root {
+  padding: 0 !important;
+}
+
+.MuiListItemButton-gutters span {
+  display: flex;
+}
+
+.MuiListItemButton-gutters .MuiListItemIcon-root {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+
 .question-list span {
-  padding: 10px auto;
-  white-space: nowrap;
+  height: 50px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  cursor: pointer;
 }
 
 .questions-grid {

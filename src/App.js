@@ -1,7 +1,7 @@
-import './App.css';
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import "./App.css";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
-import { BrowserRouter, Routes, Route } from 'react-router';
+import { BrowserRouter, Routes, Route } from "react-router";
 
 import ChatFeed from "./components/ChatFeed.jsx";
 
