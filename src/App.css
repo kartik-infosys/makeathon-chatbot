@@ -2,92 +2,121 @@
   --primary: #caf0f8; /* Chat background */
   --secondary: #90e0ef; /* Select box color */
   --tertiary: #00b4d8; /* Text color in side bar */
-  --primary-bg: #0077b6; /* Background color */
+  --primary-bg: #defeff; /* Background color */
   --secondary-bg: #03045e; /* Side bar background */
   --text-color-dark: #474747; 
+  --input-bg: #ffffff; /* Input box background */
+  --button-bg: #00b4d8; /* Button background */
+  --button-hover-bg: #0077b6; /* Button hover background */
+  --chat-bg: #fef9ff; /* Chat background */
+  --chat-border: #90e0ef; /* Chat border */
 }
-
+ 
 body {
-  background-color: var(--primary-bg);
+  background-color: var(--primary-bg) !important;
   overflow-x: hidden; 
+  font-family: Arial, sans-serif;
+  color: var(--text-color-dark);
 }
-
+ 
 #input-box {
   position: fixed;
-  bottom: 1px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  width: 100%; 
   display: flex;
   justify-content: center;
-  background-color: white;
-  border-radius: 50px;
+  background-color: var(--input-bg);
+  border-radius: 25px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+ 
 #input-box input::placeholder {
   color: var(--text-color-dark);
 }
-
+ 
 #input-box button {
   border: none;
   outline: none;
-  border-radius: 50%;
+  border-radius: 25px;
   cursor: pointer;
-  padding: 5px 10px;
+  padding: 10px 20px;
+  background-color: var(--button-bg);
+  color: white;
+  transition: background-color 0.3s;
 }
-
+ 
+#input-box button:hover {
+  background-color: var(--button-hover-bg);
+}
+ 
 .chat-feed {
-  margin: 90px auto;
+  margin: 100px auto;
+  padding: 20px;
+  max-width: 800px;
+  background-color: var(--chat-bg);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
+ 
 .chat-feed h3 {
   font-size: 2rem;
   color: transparent;
   background: linear-gradient(to right, var(--secondary), var(--tertiary));
   -webkit-background-clip: text;
   background-clip: text; 
+  text-align: center;
+  margin-bottom: 20px;
 }
-
+ 
 .select-plan {
-  margin: 10px;
+  margin: 10px 0;
   border-radius: 10px;
+  padding: 10px;
+  background-color: var(--secondary-bg);
+  color: white;
 }
-
+ 
 .select-plan label,
 .select-plan select {
   color: var(--secondary);
 }
-
+ 
 .question-list {
   margin-top: 50px;
 }
-
+ 
 .MuiListItemButton-root {
-  padding: 0; 
+  padding: 10px; 
+  border-bottom: 1px solid var(--chat-border);
 }
-
+ 
 .MuiListItemButton-gutters span {
   display: flex;
 }
-
+ 
 .MuiListItemButton-gutters .MuiListItemIcon-root {
   display: flex;
   align-items: center;
   justify-content: start;
 }
-
+ 
 .question-list span {
   height: 50px;
   overflow: hidden;
 }
-
+ 
 .questions-grid {
   background-color: var(--secondary-bg);
   color: var(--tertiary);
+  padding: 20px;
+  border-radius: 10px;
 }
-
+ 
 .chat-question {
   background-color: var(--primary);
-  padding: 10px;
-  border-radius: 50px 10px 50px 50px; 
+  padding: 15px;
+  border-radius: 25px 10px 25px 25px; 
+  margin-bottom: 10px;
+  border: 1px solid var(--chat-border);
 }

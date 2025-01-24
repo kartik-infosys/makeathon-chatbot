@@ -98,14 +98,15 @@ export const HomeComponent = WrappedComponent => {
                 <Box sx={{ flexGrow: 1 }}>
                     <ThemeProvider theme={theme}>
                         <AppBar position="fixed">
-                            <Toolbar>
-                                <IconButton
-                                    color="inherit"
-                                    onClick={toggleDrawer(true)}
-                                >
-                                    <MenuIcon />
-                                </IconButton>
-                                {/* <FormControl fullWidth sx={{ maxWidth: 120 }}>
+                            <Toolbar className="d-flex justify-content-between">
+                                <div className="d-flex">
+                                    <IconButton
+                                        color="inherit"
+                                        onClick={toggleDrawer(true)}
+                                    >
+                                        <MenuIcon />
+                                    </IconButton>
+                                    {/* <FormControl fullWidth sx={{ maxWidth: 120 }}>
                                     <InputLabel id="demo-simple-select-label">Select Version</InputLabel>
                                     <NativeSelect
                                         defaultValue={10}
@@ -114,6 +115,13 @@ export const HomeComponent = WrappedComponent => {
                                         <option value={20}>Beta</option>
                                     </NativeSelect>
                                 </FormControl> */}
+                                    <h5 className="mt-2">Caffine Coders</h5>
+                                </div>
+                                <div>
+                                    <span>About Us</span>
+                                    <img src="https://static.vecteezy.com/system/resources/previews/042/387/654/non_2x/instagram-button-icon-set-instagram-screen-social-media-and-social-network-interface-template-stories-user-button-symbol-sign-logo-stories-liked-editorial-free-png.png" 
+                                        alt="Instagram Icon" height={50} width={50} />
+                                </div>
                             </Toolbar>
                         </AppBar>
                     </ThemeProvider>

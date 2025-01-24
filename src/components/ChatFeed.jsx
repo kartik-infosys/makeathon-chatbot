@@ -32,12 +32,13 @@ const ChatFeed = () => {
 
         const result = await model.generateContent(`${textInput} give answer only in JSON without extra text 
             and create ticket with only title, description, priority, status, openDate, closeDate (if closed)`);
+        
         const textResult = result.response.text();
 
         const currentChat = {
             id: uuidv4(),
             question: textInput,
-            answer: textResult
+            answer: textResult.replace("```", "").replace("json", "").replace("```", "")
         };
 
         setIsLoading(false);
@@ -85,6 +86,7 @@ const ChatFeed = () => {
                                 <InputAdornment position="end">
                                     <IconButton
                                         edge="end"
+                                        type="submit"
                                     >
                                         <ArrowUpwardIcon />
                                     </IconButton>
