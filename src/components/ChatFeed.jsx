@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import ChatComponent from "./ChatComponent.jsx";
 
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { v4 as uuidv4 } from "uuid";
+// import { v4 as uuidv4 } from "uuid";
 
 import { HomeComponent } from './HomeComponent.jsx';
 
@@ -16,7 +16,7 @@ import Skeleton from '@mui/material/Skeleton';
 
 const key = "AIzaSyBHxz1-awqlPJnnb5QBxnCKR6npqhJEYjA";
 
-const genAI = new GoogleGenerativeAI(key);
+// const genAI = new GoogleGenerativeAI(key);
 
 const ChatFeed = () => {
     const [chats, setChats] = useState([]);
