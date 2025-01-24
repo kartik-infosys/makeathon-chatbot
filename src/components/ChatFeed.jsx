@@ -17,45 +17,116 @@ import Skeleton from '@mui/material/Skeleton';
 const key = "AIzaSyBHxz1-awqlPJnnb5QBxnCKR6npqhJEYjA";
 
 const genAI = new GoogleGenerativeAI(key);
-const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const ChatFeed = () => {
     const [chats, setChats] = useState([]);
     const [textInput, setTextInput] = useState("");
     const [isLoading, setIsLoading] = useState(false);
+    const [history, setHistory] = useState([]);
+
 
     async function handleSubmit(event) {
         event.preventDefault();
 
+        // const his = history.map(({ role, textInput }) => ({ role, parts: [{ text: textInput }] }))
+
+        // const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+        // const chat = model.startChat({
+        //     history: [],
+        //     generationConfig: {
+        //         maxOutputTokens: 500
+        //     }
+        // });
 
         setIsLoading(true);
 
-        const result = await model.generateContent(`${textInput} give answer only in JSON without extra text 
-            and create ticket with only title, description, priority, status, openDate, closeDate (if closed)`);
-        
-        const textResult = result.response.text();
+        const requestOptions = {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+                contents: [
+                    ...history,
+                    {
+                        parts: [
+                            {
+                                text: `${textInput} give answer only in JSON format without extra text and create ticket
+                                     with only title, description, priority, status, openDate, closeDate (if closed)`
+                            }
+                        ],
+                        role: "user"
+                    }
+                ]
+            })
+        }
 
-        const currentChat = {
-            id: uuidv4(),
-            question: textInput,
-            answer: textResult.replace("```", "").replace("json", "").replace("```", "")
-        };
+        try {
+            const response = await fetch("https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyBHxz1-awqlPJnnb5QBxnCKR6npqhJEYjA",
+                requestOptions
+            )
+            const data = await response.json();
+
+            console.log(data.candidates[0].content);
+
+            setHistory([
+                ...history,
+                {
+                    parts: [
+                        {
+                            text: textInput
+                        }
+                    ],
+                    role: "user"
+                },
+                data.candidates[0].content
+            ])
+
+            const newContent = [
+                {
+                    parts: [
+                        {
+                            text: `${textInput}`
+                        }
+                    ],
+                    role: "user"
+                },
+                data.candidates[0].content
+            ]
+
+            setChats([...chats, ...newContent]);
+
+            localStorage.setItem("chats", JSON.stringify([...chats, ...newContent]));
+        } catch (error) {
+            console.log(error);
+        }
+
+        // const result = await chat.sendMessage(textInput);
+
+        //  
+
+        // const textResult = result.response.text();
+
+        // const currentChat = {
+        //     id: uuidv4(),
+        //     question: textInput,
+        //     answer: textResult.replace("```", "").replace("json", "").replace("```", "")
+        // };
 
         setIsLoading(false);
 
         const scrollHeight = document.querySelector(".chat-feed").scrollHeight;
         window.scrollTo(scrollHeight, scrollHeight);
 
-        setChats([...chats, currentChat]);
         setTextInput("");
 
-        const allChats = [...chats, currentChat];
-        localStorage.setItem("chats", JSON.stringify(allChats));
+        // console.log("textResult", textResult)
+        // const allChats = [...chats, currentChat];
+        // localStorage.setItem("chats", JSON.stringify(allChats));
     }
 
     useEffect(() => {
         const chatsFromStorage = JSON.parse(localStorage.getItem("chats"));
-        if(chatsFromStorage && chatsFromStorage.length) {
+        if (chatsFromStorage && chatsFromStorage.length) {
             setChats(chatsFromStorage);
         }
     }, []);
