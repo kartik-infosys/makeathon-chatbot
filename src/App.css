@@ -1,36 +1,26 @@
 :root {
-  /* --primary: #caf0f8;
-  --secondary: #90e0ef;
-  --tertiary: #00b4d8;
-
-  --primary-bg: #0077b6;
-  --secondary-bg: #03045e; */
-
-  --text-color-dark: #474747;
-
   --primary: #caf0f8; /* Chat background */
   --secondary: #90e0ef; /* Select box color */
   --tertiary: #00b4d8; /* Text color in side bar */
-
-  --primary-bg: #0077b6;
+  --primary-bg: #0077b6; /* Background color */
   --secondary-bg: #03045e; /* Side bar background */
+  --text-color-dark: #474747; 
 }
 
 body {
   background-color: var(--primary-bg);
-  overflow-x: hidden;
+  overflow-x: hidden; 
 }
 
-
 #input-box {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  background-color: white;
   position: fixed;
   bottom: 1px;
   left: 50%;
   transform: translateX(-50%);
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  background-color: white;
   border-radius: 50px;
 }
 
@@ -39,9 +29,9 @@ body {
 }
 
 #input-box button {
-  border-radius: 50%;
-  outline: none;
   border: none;
+  outline: none;
+  border-radius: 50%;
   cursor: pointer;
   padding: 5px 10px;
 }
@@ -51,11 +41,11 @@ body {
 }
 
 .chat-feed h3 {
-  background: -webkit-linear-gradient(var(--secondary), var(--tertiary));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
   font-size: 2rem;
+  color: transparent;
+  background: linear-gradient(to right, var(--secondary), var(--tertiary));
+  -webkit-background-clip: text;
+  background-clip: text; 
 }
 
 .select-plan {
@@ -63,7 +53,8 @@ body {
   border-radius: 10px;
 }
 
-.select-plan label, .select-plan select {
+.select-plan label,
+.select-plan select {
   color: var(--secondary);
 }
 
@@ -72,7 +63,7 @@ body {
 }
 
 .MuiListItemButton-root {
-  padding: 0 !important;
+  padding: 0; 
 }
 
 .MuiListItemButton-gutters span {
@@ -98,5 +89,5 @@ body {
 .chat-question {
   background-color: var(--primary);
   padding: 10px;
-  border-radius: 50px 10px 50px 50px;
+  border-radius: 50px 10px 50px 50px; 
 }

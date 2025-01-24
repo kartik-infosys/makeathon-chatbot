@@ -59,22 +59,6 @@ const ChatFeed = () => {
         }
     }, []);
 
-    function formatText(text) {
-        let formattedText = text.replace(/# (.*?)\n/g, '<h1>$1</h1>'); // h1 headers
-        formattedText = formattedText.replace(/## (.*?)\n/g, '<h2>$1</h2>'); // h2 headers
-
-        // Bullet points
-        formattedText = formattedText.replace(/\* (.*?)\n/g, '<ul><li>$1</li></ul>');
-
-        // Paragraph
-        formattedText = formattedText.replace(/([^\n#][^\n]*)\n/g, '<p>$1</p>');
-
-        // Bold
-        formattedText = formattedText.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
-
-        return formattedText;
-    }
-
     function handleKeyUp(event) {
         const { value } = event.target;
         setTextInput(value);
