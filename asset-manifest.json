@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/makeathon-chatbot/static/css/main.16f9a784.css",
-    "main.js": "/makeathon-chatbot/static/js/main.160129dc.js",
+    "main.css": "/makeathon-chatbot/static/css/main.a2242670.css",
+    "main.js": "/makeathon-chatbot/static/js/main.e80275f3.js",
     "static/js/488.bbb2970e.chunk.js": "/makeathon-chatbot/static/js/488.bbb2970e.chunk.js",
     "index.html": "/makeathon-chatbot/index.html",
-    "main.16f9a784.css.map": "/makeathon-chatbot/static/css/main.16f9a784.css.map",
-    "main.160129dc.js.map": "/makeathon-chatbot/static/js/main.160129dc.js.map",
+    "main.a2242670.css.map": "/makeathon-chatbot/static/css/main.a2242670.css.map",
+    "main.e80275f3.js.map": "/makeathon-chatbot/static/js/main.e80275f3.js.map",
     "488.bbb2970e.chunk.js.map": "/makeathon-chatbot/static/js/488.bbb2970e.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.16f9a784.css",
-    "static/js/main.160129dc.js"
+    "static/css/main.a2242670.css",
+    "static/js/main.e80275f3.js"
   ]
 }
