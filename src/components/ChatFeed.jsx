@@ -51,7 +51,8 @@ const ChatFeed = () => {
                         parts: [
                             {
                                 text: `${textInput} give answer only in JSON format without extra text and create ticket
-                                     with only title, description, priority, status, openDate, closeDate (if closed)`
+                                     with only title, description, priority, status, openDate, closeDate (if status is closed) and also 
+                                     format the JSON`
                             }
                         ],
                         role: "user"

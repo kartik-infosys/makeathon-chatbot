@@ -117,11 +117,6 @@ export const HomeComponent = WrappedComponent => {
                                 </FormControl> */}
                                     <h5 className="mt-2">Caffine Coders</h5>
                                 </div>
-                                <div>
-                                    <span>About Us</span>
-                                    <img src="https://static.vecteezy.com/system/resources/previews/042/387/654/non_2x/instagram-button-icon-set-instagram-screen-social-media-and-social-network-interface-template-stories-user-button-symbol-sign-logo-stories-liked-editorial-free-png.png" 
-                                        alt="Instagram Icon" height={50} width={50} />
-                                </div>
                             </Toolbar>
                         </AppBar>
                     </ThemeProvider>

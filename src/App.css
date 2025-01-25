@@ -120,3 +120,12 @@ body {
   margin-bottom: 10px;
   border: 1px solid var(--chat-border);
 }
+
+.chat-answer {
+  background-color: var(--secondary);
+  padding: 3px;
+  border-radius: 10px 25px 25px 25px; 
+  margin-bottom: 10px;
+  margin-left: 10px;
+  border: 1px solid var(--chat-border);
+}
